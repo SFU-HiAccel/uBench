@@ -25,6 +25,7 @@
     **Host Code (host.cpp)**
     1. Update the number of AXI ports:
       ```c++
+      15 #define NUM_KERNEL 1
       16 #define NUM_PORT 2
       ```
     
@@ -45,5 +46,25 @@
 4. **Consecutive Data Access Size**
     To change the consecutive data access size, update the 'payload' variable in the host code (**host.cpp**). Currently, 'payload' varies from 256 (1KB) to 262144 (1MB), since the data type is 32bit (4B) integer. 
       ```c++
-    100        for (int payload(256); payload <= 262144; payload*=2){
-    ```
+      100        for (int payload(256); payload <= 262144; payload*=2){
+      ```
+
+5. **DDR/HBM Connectivity & Kernel Placement**
+    To specifiy the off-chip memory type and kernel placement, update the buffer allocation flag in the host code (**host.cpp**) and the connectivity file (**ubench.ini**)
+    **Host Code (host.cpp)**
+      ```c++
+      123     for (int i = 0; i < NUM_KERNEL*NUM_PORT; i++) {
+      124          source_in_ext[i].obj = read_source.data();
+      125          source_in_ext[i].param = 0;
+      126          source_in_ext[i].flags = XCL_MEM_DDR_BANK1;
+      127     }
+      ```
+    **Connectivity File (ubench.ini)**
+      ```ini
+      1 [connectivity]
+      2 slr=krnl_ubench_1:SLR1
+      3 sp=krnl_ubench_1.in0:DDR[1]
+      4 sp=krnl_ubench_1.in1:DDR[1]
+      5 nk=krnl_ubench:1
+      ```
+    
