@@ -1,6 +1,6 @@
 ## Streaming Bandwidth
 
-    This microbenchmark measures the accelerator-to-accelerator streaming bandwidth under different combinations of three parameters, including 1) the number of parallel streaming data ports, 2) the data port width, and 3) the amount of streaming data. The example microbenchmark we provide has 1) two parallel streaming ports between a pair of read-write kernels, 2) each streaming port is 512-bit wide, and 3) the amount of streaming data size varies from ~10MB to ~10GB.
+   This microbenchmark measures the accelerator-to-accelerator streaming bandwidth under different combinations of three parameters, including 1) the number of parallel streaming data ports, 2) the data port width, and 3) the amount of streaming data. The example microbenchmark we provide has 1) two parallel streaming ports between a pair of read-write kernels, 2) each streaming port is 512-bit wide, and 3) the amount of streaming data size varies from ~10MB to ~10GB.
     
 1. **Number of Parallel Accelerator-to-Accelerator Streaming Ports**
     To change the number of concurrent memory ports, follow the instruction below to update the FPGA kernel code and connectivity file.
