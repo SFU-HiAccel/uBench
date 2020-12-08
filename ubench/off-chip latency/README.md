@@ -1,6 +1,6 @@
 ## off-chip Memory Latency
 
-    This microbenchmark measures the off-chip memory random-access latency under different 1) the data port width and 2) the size of the randomly accessed data arrary. The example microbenchmark we provide randomly accesses data array sizes from 64B to 1MB, at a 32bit data per access.
+   This microbenchmark measures the off-chip memory random-access latency under different 1) the data port width and 2) the size of the randomly accessed data arrary. The example microbenchmark we provide randomly accesses data array sizes from 64B to 1MB, at a 32bit data per access.
 
 1. **Memory Port Width**
     To change the memory port width, update the port width define in the header file (**krnl_ubench.h**).
