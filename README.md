@@ -29,12 +29,15 @@ Currently, uBench includes the following three types of microbenchmarks.
 
 * **Off-chip Memory Bandwidth**
 
+    This microbenchmark measures the off-chip memory access bandwidth under different combinations of four parameters, including 1) the number of concurrent memory access ports, 2) the data port width, 3) the maximum burst access length for each port, and 4) the size of consecutive data accesses. For read/write and DDR/HBM, we provide an example microbenchmark with 1) two concurrent memeory ports, 2) each port has a width of 512-bit, 3) the burst access length for the AXI port is the Vivado HLS default 16, and 4) the size of consecutive data accesses vary from 1KB to 1MB. [Here](https://github.com/SFU-HiAccel/uBench/tree/main/ubench/off-chip%20bandwidth) is a detailed guide on the code changes required to vary these parameters.
 
 * **Streaming Bandwidth**
 
+    This microbenchmark measures the accelerator-to-accelerator streaming bandwidth under different combinations of three parameters, including 1) the number of parallel streaming data ports, 2) the data port width, and 3) the amount of streaming data. The example microbenchmark we provide has 1) two parallel streaming ports between a pair of read-write kernels, 2) each streaming port is 512-bit wide, and 3) the amount of streaming data size varies from ~10MB to ~10GB. [Here](https://github.com/SFU-HiAccel/uBench/tree/main/ubench/streaming%20bandwidth) is a detailed guide on the code changes required to vary these parameters.
 
 * **off-chip Memory Latency**
 
+    This microbenchmark measures the off-chip memory random-access latency under different 1) the data port width and 2) the size of the randomly accessed data arrary. The example microbenchmark we provide randomly accesses data array sizes from 64B to 1MB, at a 32bit-per-access chunk. [Here](https://github.com/SFU-HiAccel/uBench/tree/main/ubench/off-chip%20latency) is a detailed guide on the code changes required to vary these parameters.
 
 ## Case Study Benchmarking Algorithms: 
 
