@@ -37,7 +37,7 @@ Currently, uBench includes the following three types of microbenchmarks.
 
 * **off-chip Memory Latency**
 
-    This microbenchmark measures the off-chip memory random-access latency under different 1) the data port width and 2) the size of the randomly accessed data arrary. The example microbenchmark we provide randomly accesses data array sizes from 64B to 1MB, at a 32bit-per-access chunk. [Here](https://github.com/SFU-HiAccel/uBench/tree/main/ubench/off-chip%20latency) is a detailed guide on the code changes required to vary these parameters.
+    This microbenchmark measures the off-chip memory random-access latency under different 1) the data port width and 2) the size of the randomly accessed data arrary. The example microbenchmark we provide randomly accesses data array sizes from 64B to 1MB, at a 32bit data per access. [Here](https://github.com/SFU-HiAccel/uBench/tree/main/ubench/off-chip%20latency) is a detailed guide on the code changes required to vary these parameters.
 
 ## Case Study Benchmarking Algorithms: 
 
