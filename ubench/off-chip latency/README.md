@@ -25,6 +25,7 @@
       }
       ```
     **Connectivity File (ubench.ini)**
+       For more details on the Vitis compiler options and specifiers, please refer to this document: https://www.xilinx.com/support/documentation/sw_manuals/xilinx2020_1/ug1393-vitis-application-acceleration.pdf
       ```ini
       [connectivity]
       slr=krnl_ubench_1:SLR0
