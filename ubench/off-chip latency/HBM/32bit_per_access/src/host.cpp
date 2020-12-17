@@ -192,7 +192,7 @@ int main(int argc, char *argv[]) {
         kernel_time_in_sec = kernel_time.count();
         std::cout << "Execution time = " << kernel_time_in_sec << std::endl;
 		double bw_result = payload * 4 * 0.000010000 / kernel_time_in_sec * NUM_KERNEL;
-        std::cout << "Payload Size: " << i*4/(1024.0*1024.0) << "MB - Latency = " << bw_result << "GB/s"<< std::endl;
+        std::cout << "Payload Size: " << payload*4/(1024.0*1024.0) << "MB - Latency = " << bw_result << "GB/s"<< std::endl;
     }
 
     // Exit program

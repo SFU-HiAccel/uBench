@@ -185,7 +185,7 @@ int main(int argc, char *argv[])
     for (int i = 0; i < NUM_KERNEL; ++i) {
         starting_idx = i*partition_size;
         searchspace_data_part[i].resize(partition_size);
-        for (unsigned int j = 0; j < partition_size; ++j){
+        for (int j = 0; j < partition_size; ++j){
             searchspace_data_part[i][j] = searchspace_data[starting_idx+j];
         }     
     }

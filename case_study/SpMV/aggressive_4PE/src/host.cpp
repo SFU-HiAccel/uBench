@@ -76,7 +76,7 @@ void Generate_sw_verif_data(std::vector<float, aligned_allocator<float>> &nzval_
     for (unsigned int i=0; i<data_size; ++i){
         cols_data[i] = min + (rand() % static_cast<int>(max - min + 1));
     }
-    for (unsigned int i=0; i<num_row; ++i){
+    for (int i=0; i<num_row; ++i){
         vec_data[i] = static_cast <float>(rand()) / static_cast<float>(RAND_MAX);
     }
 
@@ -288,7 +288,7 @@ int main(int argc, char *argv[]) {
     q.finish();
 
     // Start timer
-    double kernel_time_in_sec = 0, result = 0;
+    double kernel_time_in_sec = 0;
     std::chrono::duration<double> kernel_time(0);
     auto kernel_start = std::chrono::high_resolution_clock::now();
     
