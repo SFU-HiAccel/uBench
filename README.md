@@ -32,14 +32,18 @@ Currently, uBench includes the following three types of microbenchmarks.
 * **Off-chip Memory Bandwidth**
 
     This microbenchmark measures the off-chip memory access bandwidth under different combinations of five parameters, including 1) the clock frequency of the accelerator design, 2) the number of concurrent memory access ports, 3) the data port width, 4) the maximum burst access length for each port, and 5) the size of consecutive data accesses. 
-    For read/write and DDR/HBM, we provide example microbenchmarks with 1) 300MHz accelerator frequency, 2) two concurrent memeory ports, 3) each port has a width of 512-bit, 4) the burst access length for the AXI port is the Vivado HLS default 16, and 5) the size of consecutive data accesses vary from 1KB to 1MB. [Here](https://github.com/SFU-HiAccel/uBench/tree/2020.2/ubench/offchip_bandwidth/datacenter) is a detailed guide on the code changes required to manually vary these parameters.
-    We also provide python scripts to automate the generation and synthesizing the microbenchmarks based on users' configurations of these five parameters. [Here](https://github.com/SFU-HiAccel/uBench/tree/2020.2/ubench/offchip_bandwidth/datacenter/auto_collect) is a detailed guide on these configuration parameters.
+    
+    For read/write and DDR/HBM, we provide example microbenchmarks with 1) 300MHz accelerator frequency, 2) two concurrent memeory ports, 3) each port has a width of 512-bit, 4) the burst access length for the AXI port is the Vivado HLS default 16, and 5) the size of consecutive data accesses vary from 1KB to 1MB. [Here](https://github.com/SFU-HiAccel/uBench/tree/2020.2/ubench/offchip_bandwidth/datacenter) is a detailed guide on the code changes required to **manually** vary these parameters.
+    
+    We also provide python scripts to **automate** the generation and synthesizing the microbenchmarks based on users' configurations of these five parameters. [Here](https://github.com/SFU-HiAccel/uBench/tree/2020.2/ubench/offchip_bandwidth/datacenter/auto_collect) is a detailed guide on these configuration parameters.
 
 * **Streaming Bandwidth**
 
     This microbenchmark measures the accelerator-to-accelerator streaming bandwidth under different combinations of three parameters, including 1) the clock frequency of the accelerator design, 2) the number of parallel streaming data ports, 3) the data port width, and 4) the amount of streaming data. 
-    The example microbenchmark we provide runs at 1) 300MHz, has 2) two parallel streaming ports between a pair of read-write kernels, 3) each streaming port is 512-bit wide, and 4) the amount of streaming data size varies from ~10MB to ~10GB. [Here](https://github.com/SFU-HiAccel/uBench/tree/2020.2/ubench/streaming_bandwidth/datacenter) is a detailed guide on the code changes required to vary these parameters.
-        We also provide python scripts to automate the generation and synthesizing the microbenchmarks based on users' configurations of these four parameters. [Here](https://github.com/SFU-HiAccel/uBench/tree/2020.2/ubench/streaming_bandwidth/datacenter/auto_collect) is a detailed guide on these configuration parameters.
+    
+    The example microbenchmark we provide runs at 1) 300MHz, has 2) two parallel streaming ports between a pair of read-write kernels, 3) each streaming port is 512-bit wide, and 4) the amount of streaming data size varies from ~10MB to ~10GB. [Here](https://github.com/SFU-HiAccel/uBench/tree/2020.2/ubench/streaming_bandwidth/datacenter) is a detailed guide on the code changes required to **manually** vary these parameters.
+    
+    We also provide python scripts to **automate** the generation and synthesizing the microbenchmarks based on users' configurations of these four parameters. [Here](https://github.com/SFU-HiAccel/uBench/tree/2020.2/ubench/streaming_bandwidth/datacenter/auto_collect) is a detailed guide on these configuration parameters.
 
 * **off-chip Memory Latency**
 
