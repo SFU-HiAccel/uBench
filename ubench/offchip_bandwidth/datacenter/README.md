@@ -1,5 +1,5 @@
 ## Off-chip Memory Bandwidth
-   This microbenchmark measures the off-chip memory access bandwidth under different combinations of four parameters, including 1) the number of concurrent memory access ports, 2) the data port width, 3) the maximum burst access length for each port, and 4) the size of consecutive data accesses. For read/write and DDR/HBM, we provide an example microbenchmark with 1) two concurrent memory ports, 2) each port has a width of 512-bit, 3) the burst access length for the AXI port is the Vivado HLS default 16, and 4) the size of consecutive data accesses vary from 1KB to 1MB. 
+   This microbenchmark measures the off-chip memory access bandwidth under different combinations of four parameters, including 1) the accelerator frequency of microbenchmark design 2) the number of concurrent memory access ports, 3) the data port width, 4) the maximum burst access length for each port, and 5) the size of consecutive data accesses. For read/write and DDR/HBM, we provide an example microbenchmark with 1) 300MHz design frequency, 2) two concurrent memory ports, 3) each port has a width of 512-bit, 4) the burst access length for the AXI port is the Vivado HLS default 16, and 5) the size of consecutive data accesses vary from 1KB to 1MB. 
    
 1. **Number of Concurrent Memory Ports**
     To change the number of concurrent memory ports, follow the instruction below to update the host and FPGA kernel code.     
@@ -70,4 +70,10 @@
       sp=krnl_ubench_1.in1:DDR[1]
       nk=krnl_ubench:1
       ```
-    
+
+6. **Accelerator Design Frequency**
+   To specifiy the design frequency of the accelerator, update the  in the makefile (**Makefile**) and the 
+   ```
+   # Kernel compiler global settings
+   CLFLAGS += -t $(TARGET) --platform $(DEVICE) --save-temps --kernel_frequency 300
+   ```
