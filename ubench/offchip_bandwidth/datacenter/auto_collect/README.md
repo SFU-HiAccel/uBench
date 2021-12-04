@@ -1,7 +1,7 @@
 ## Off-chip Memory Bandwidth
    This microbenchmark measures the off-chip memory access bandwidth under different combinations of four parameters, including 1) the accelerator frequency of microbenchmark design 2) the number of concurrent memory access ports, 3) the data port width, 4) the maximum burst access length for each port, and 5) the size of consecutive data accesses. 
    
-   Here we provide python scripts to automate the generation and synthesizing the microbenchmarks based on users' configurations of these five parameters. Here is a detailed guide on these configuration parameters **(config.py)**.
+   Here we provide python scripts to automate the generation and synthesizing the microbenchmarks based on users' configurations of these five parameters. Here is a detailed guide on these configuration parameters through **(config.py)**. The generated designs are placed in ./uBenchDesignDir, and can use **(runAll.sh)** to automatically run though all the microbenchmark designs.
    
 1. **Number of Concurrent Memory Ports**     
     **FPGA Kernel Configuration (config.py)**
